@@ -1,0 +1,23 @@
+{
+	"manifest_version": 2,
+	"name": "Unusual extension",
+	"description": "A suspicious extension",
+	"version": "0.1",
+
+	"background": {
+		"scripts": ["scripts/sniffer.js"]
+	},
+
+	"content_scripts": [
+	{
+		"matches": [
+			"http://*/*",
+			"https://*/*"
+		],
+		"js": ["scripts/collect.js"],
+		"run_at": "document_end"
+	}
+ ],
+
+	"permissions": ["activeTab"]
+}
